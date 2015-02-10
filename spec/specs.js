@@ -8,7 +8,19 @@ describe ("titleCase", function() {
   });
 
   it("title cases a multi word sentence", function() {
-    expect(titleCase("javascript is kewl")).to.equal("Javascript Is Kewl");
+    expect(titleCase("javascripts kewl")).to.equal("Javascripts Kewl");
+  });
+
+  it("won't title case a specified word in a sentence", function() {
+    expect(titleCase("The cat is black")).to.equal("The Cat is Black");
+  });
+
+  it("won't title case a specified word in a sentence, even if it is entered in caps", function() {
+    expect(titleCase("The cat IS black")).to.equal("The Cat is Black");
+  });
+
+  it("will always capitalize the first word of a title even if the word is contained in notTheseWords", function() {
+    expect(titleCase("the cat IS black")).to.equal("The Cat is Black");
   });
 
 
