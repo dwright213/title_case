@@ -1,16 +1,13 @@
 var titleCase = function(word) {
-
+  word = word.toLowerCase();
   var splitPhrase = word.split([]);
-
-  var titleCased = splitPhrase[0].toUpperCase();
-
+  var firstLetter = splitPhrase[0].toUpperCase();
   var decapitatedWord = splitPhrase.slice(1);
 
-  decapitatedWord.unshift(titleCased);
+  decapitatedWord.unshift(firstLetter);
 
-  var turd = decapitatedWord.join("");
+  var final = decapitatedWord.join("");
 
-  return turd;
-
+  return final;
 
 };
