@@ -7,5 +7,9 @@ describe ("titleCase", function() {
     expect(titleCase("ANGER")).to.equal("Anger");
   });
 
+  it("title cases a multi word sentence", function() {
+    expect(titleCase("javascript is kewl")).to.equal("Javascript Is Kewl");
+  });
+
 
 });
