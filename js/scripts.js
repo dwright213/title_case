@@ -16,7 +16,7 @@ var perWord = function(word) {
 var titleCase = function(subject) {
   subject = subject.toLowerCase()
   if (subject.indexOf(" ") !== -1) {
-      var notTheseWords = ["is", "and", "or", "if", "the"]
+      var notTheseWords = ["is", "and", "or", "if", "the", "a", "an", "but", "for", "nor", "on", "at", "to", "from", "by"]
       var phrase = subject.split(" ");
       var phraseLength = (phrase.length - 1);
       var notTheseWordsLength = (notTheseWords.length - 1);
@@ -37,3 +37,18 @@ var titleCase = function(subject) {
     return perWord(subject);
   };
 };
+
+// ------------------
+
+$(document).ready(function() {
+
+  $("form#title_case").submit(function(event) {
+    var title_case = $("input#title_case").val();
+    var result = titleCase(title_case);
+
+    $(".result").text(result);
+
+    event.preventDefault();
+
+  });
+});
